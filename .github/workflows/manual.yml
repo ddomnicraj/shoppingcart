@@ -23,7 +23,10 @@ jobs:
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env:
+     owner: Dom
+     co-owner: Raj
+     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: cache
@@ -31,12 +34,6 @@ jobs:
       with:
        path: .en/
        key: ${CI_COMMIT_REF_SLUG}
-    
-    - name: Define Env
-      env:
-       user: Domnic
-       stage: dev
-       grade: S
        
     # Runs a single command using the runners shell
     - name: Send greeting
