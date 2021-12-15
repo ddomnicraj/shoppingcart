@@ -17,6 +17,10 @@ on:
         required: true    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+- name: cache
+  uses: actions/cache@v2
+  with:
+   path: .en/
   # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on
