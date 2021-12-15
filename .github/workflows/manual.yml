@@ -17,10 +17,6 @@ on:
         required: true    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-- name: cache
-  uses: actions/cache@v2
-  with:
-   path: .en/
   # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on
@@ -28,6 +24,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: cache
+      uses: actions/cache@v2
+      with:
+       path: .en/
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
