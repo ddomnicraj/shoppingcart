@@ -31,7 +31,13 @@ jobs:
       with:
        path: .en/
        key: ${CI_COMMIT_REF_SLUG}
- 
+    
+    - name: Define Env
+      env:
+       user: Domnic
+       stage: dev
+       grade: S
+       
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
