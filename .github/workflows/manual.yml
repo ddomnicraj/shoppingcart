@@ -50,6 +50,8 @@ jobs:
       run: |
        echo Add other actions to build,
        echo test, and deploy your project
+       echo " who: $manager"
+       echo " auth: $owner"
           
     - name: Env set 
       env: # Or as an environment variable
